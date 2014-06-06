@@ -1,0 +1,8 @@
+What I'll need to make and/or do:
+- pointcloud2 message generating thing (i.e. that thing I already have)
+- pointcloud2 message parser in JS (need to figure out how to do that)
+- figure out if markers can be resized or if i can use a three.js object for      the points. accomplish this by means of testing w/ python publishers and rviz.
+- figure out how the graphics libraries work (i.e. how to show stuff w/ three)
+- integrate that with ros3djs to display with their viewer
+- if pointcloud2's are too hard to directly parse, create service that converts   to pcd and then parses it
+- hope it works

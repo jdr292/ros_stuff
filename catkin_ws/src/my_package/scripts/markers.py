@@ -6,7 +6,7 @@ from visualization_msgs.msg import Marker
 def marker_maker():
     pub = rospy.Publisher("markers",Marker,queue_size=10)
     rospy.init_node("marker_maker")
-    r = rospy.Rate(1000000)
+    r = rospy.Rate(1)
     q = 0
     i = 1
     j = 0
@@ -16,8 +16,10 @@ def marker_maker():
       msg.type=Marker.SPHERE
       msg.id=q
       msg.action = 0
-      msg.color.r = 255
-      msg.color.a = 255
+      msg.color.r = 2550
+      msg.color.g = 255
+      msg.color.b = 255
+      msg.color.a = 1
       msg.pose.position.x = j
       msg.pose.position.y = j
       msg.pose.position.z = j

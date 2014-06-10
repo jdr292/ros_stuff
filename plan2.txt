@@ -1,0 +1,12 @@
+Updated/Newfangled things that need to be done:
+-The data coming through a PointCloud2 is weird. xyz(rgb) are 4 bytes a pop
+ (they're float32's), need to figure out how to extract actual coordinates.
+-The alternative to that is to figure out from the .pcd how to turn that rgb
+ value into an understandable hex or 3-tuple.
+-Once one of those things is done, we can work on extracting the data from the
+ message or from the file using JS.
+-Once that's done, we make a JS class similar to ros3d.MarkerClient, but for      PointCloud2's, and a corresponding PointCloud2 class as well. Should be a matter
+ of copy/paste for the most part.
+-Hopefully it'll natively understand the RGB that we supply. I don't want to have
+ to deal with meshes, but hopefully it won't be necessary.
+-Then, testing!

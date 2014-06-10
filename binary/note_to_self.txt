@@ -1,0 +1,7 @@
+I just realized it's 32 bits, not 24 bits, so you can't directly do the
+bitshift thing on the f32 from the message, after converting to binary. More
+research is required. All hail Skynet. Also, remember to actually git shit up.
+That way it REALLY won't matter what computer I'm using, dig? Cool. Nice.
+
+Also when I generalized the toBinary function it totally crapped out.
+Current answer from bin_test should be 25, iirc. Not 14.25.

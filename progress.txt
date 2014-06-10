@@ -1,0 +1,16 @@
+Okay, so here's what we have:
+- that thing that'll turn the weird f32's into real numbers (binary folder)
+- package my_package (must source manually) that contains markers.py which in
+  conjunction with markerexample.html will display markers that float off into
+  the distance.
+
+here's what we need:
+- to figure out what's up with the colors. when the messages go out from
+  markers.py, in rviz the colors correspond to the messages in that they go on
+  a 0-1.0 scale. with the browser, i have no idea how it works. it seems to be
+  some sort of distance-from-0 system, but if the values are negative the color
+  changes as well. it's really strange.
+- to actually build the pointcloud class and client in js.
+- figure out how to interface the messages with the client (i.e. when i want to
+  convert the data, how...)
+

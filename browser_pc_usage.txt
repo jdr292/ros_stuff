@@ -1,0 +1,28 @@
+Okay, so here's how it works:
+-roscore
+-roslaunch rosbridge_server rosbridge_websocket.launch
+-rosrun my_package repub.py (assuming the workspace is sourced [it is])
+-cd /misc/projects/reichler
+-firefox pc_working/pcTest.html
+-rosrun pcl_ros pcd_to_pointcloud pcds/<something>.pcd
+
+currently i have ~/.bashrc sourcing my catkin_ws directory by default.
+it is questionable whether or not this is a good/permanent thing. don't
+forget that it was done and probably should be reverted at some point.
+
+Issues with the current "implementation":
+
+it's slow as heck. source of slowness unsure, but it can almost definitely be
+sped up.
+
+it relies on my_package/repub.py, which has to parse a huge goddamn string for
+no reason due to an apparent bug in the implementation of uint8[] messages.
+
+it can only handle little-endian data, and assumes float32 storage.
+
+it doesn't do anything with fields other than x,y,z,rgb.
+
+it seems to be defaulting to little squares: being able to change that might
+be nice. maybe on the website put radio buttons for shape, and allow input to
+change the size of the points. this is probably the least threatening issue.
+

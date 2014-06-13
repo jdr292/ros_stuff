@@ -35,6 +35,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /misc/projects/reichler/catkin_ws/src
 
@@ -46,8 +49,8 @@ CMAKE_BINARY_DIR = /misc/projects/reichler/catkin_ws/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -264,6 +267,97 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named my_package_gencpp
+
+# Build rule for target.
+my_package_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_gencpp
+.PHONY : my_package_gencpp
+
+# fast build rule for target.
+my_package_gencpp/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_gencpp.dir/build.make my_package/CMakeFiles/my_package_gencpp.dir/build
+.PHONY : my_package_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named my_package_generate_messages
+
+# Build rule for target.
+my_package_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_generate_messages
+.PHONY : my_package_generate_messages
+
+# fast build rule for target.
+my_package_generate_messages/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_generate_messages.dir/build.make my_package/CMakeFiles/my_package_generate_messages.dir/build
+.PHONY : my_package_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named my_package_generate_messages_cpp
+
+# Build rule for target.
+my_package_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_generate_messages_cpp
+.PHONY : my_package_generate_messages_cpp
+
+# fast build rule for target.
+my_package_generate_messages_cpp/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_generate_messages_cpp.dir/build.make my_package/CMakeFiles/my_package_generate_messages_cpp.dir/build
+.PHONY : my_package_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named my_package_generate_messages_lisp
+
+# Build rule for target.
+my_package_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_generate_messages_lisp
+.PHONY : my_package_generate_messages_lisp
+
+# fast build rule for target.
+my_package_generate_messages_lisp/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_generate_messages_lisp.dir/build.make my_package/CMakeFiles/my_package_generate_messages_lisp.dir/build
+.PHONY : my_package_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named my_package_generate_messages_py
+
+# Build rule for target.
+my_package_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_generate_messages_py
+.PHONY : my_package_generate_messages_py
+
+# fast build rule for target.
+my_package_generate_messages_py/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_generate_messages_py.dir/build.make my_package/CMakeFiles/my_package_generate_messages_py.dir/build
+.PHONY : my_package_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named my_package_genlisp
+
+# Build rule for target.
+my_package_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_genlisp
+.PHONY : my_package_genlisp
+
+# fast build rule for target.
+my_package_genlisp/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_genlisp.dir/build.make my_package/CMakeFiles/my_package_genlisp.dir/build
+.PHONY : my_package_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named my_package_genpy
+
+# Build rule for target.
+my_package_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_package_genpy
+.PHONY : my_package_genpy
+
+# fast build rule for target.
+my_package_genpy/fast:
+	$(MAKE) -f my_package/CMakeFiles/my_package_genpy.dir/build.make my_package/CMakeFiles/my_package_genpy.dir/build
+.PHONY : my_package_genpy/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -402,6 +496,13 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... my_package_gencpp"
+	@echo "... my_package_generate_messages"
+	@echo "... my_package_generate_messages_cpp"
+	@echo "... my_package_generate_messages_lisp"
+	@echo "... my_package_generate_messages_py"
+	@echo "... my_package_genlisp"
+	@echo "... my_package_genpy"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_py"

@@ -3,6 +3,6 @@ prefix=/misc/projects/reichler/catkin_ws/install
 Name: my_package
 Description: Description of my_package
 Version: 0.0.0
-Cflags: 
+Cflags: -I/misc/projects/reichler/catkin_ws/install/include
 Libs: -L/misc/projects/reichler/catkin_ws/install/lib 
-Requires: 
+Requires: rospy sensor_msgs std_msgs visualization_msgs message_runtime

@@ -35,6 +35,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /misc/projects/reichler/catkin_ws/src
 
@@ -46,8 +49,8 @@ CMAKE_BINARY_DIR = /misc/projects/reichler/catkin_ws/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -189,6 +192,104 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+my_package/CMakeFiles/my_package_gencpp.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_gencpp.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_gencpp.dir/rule
+
+# Convenience name for target.
+my_package_gencpp: my_package/CMakeFiles/my_package_gencpp.dir/rule
+.PHONY : my_package_gencpp
+
+# fast build rule for target.
+my_package_gencpp/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_gencpp.dir/build.make my_package/CMakeFiles/my_package_gencpp.dir/build
+.PHONY : my_package_gencpp/fast
+
+# Convenience name for target.
+my_package/CMakeFiles/my_package_generate_messages.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_generate_messages.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_generate_messages.dir/rule
+
+# Convenience name for target.
+my_package_generate_messages: my_package/CMakeFiles/my_package_generate_messages.dir/rule
+.PHONY : my_package_generate_messages
+
+# fast build rule for target.
+my_package_generate_messages/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_generate_messages.dir/build.make my_package/CMakeFiles/my_package_generate_messages.dir/build
+.PHONY : my_package_generate_messages/fast
+
+# Convenience name for target.
+my_package/CMakeFiles/my_package_generate_messages_cpp.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_generate_messages_cpp.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+my_package_generate_messages_cpp: my_package/CMakeFiles/my_package_generate_messages_cpp.dir/rule
+.PHONY : my_package_generate_messages_cpp
+
+# fast build rule for target.
+my_package_generate_messages_cpp/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_generate_messages_cpp.dir/build.make my_package/CMakeFiles/my_package_generate_messages_cpp.dir/build
+.PHONY : my_package_generate_messages_cpp/fast
+
+# Convenience name for target.
+my_package/CMakeFiles/my_package_generate_messages_lisp.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_generate_messages_lisp.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+my_package_generate_messages_lisp: my_package/CMakeFiles/my_package_generate_messages_lisp.dir/rule
+.PHONY : my_package_generate_messages_lisp
+
+# fast build rule for target.
+my_package_generate_messages_lisp/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_generate_messages_lisp.dir/build.make my_package/CMakeFiles/my_package_generate_messages_lisp.dir/build
+.PHONY : my_package_generate_messages_lisp/fast
+
+# Convenience name for target.
+my_package/CMakeFiles/my_package_generate_messages_py.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_generate_messages_py.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_generate_messages_py.dir/rule
+
+# Convenience name for target.
+my_package_generate_messages_py: my_package/CMakeFiles/my_package_generate_messages_py.dir/rule
+.PHONY : my_package_generate_messages_py
+
+# fast build rule for target.
+my_package_generate_messages_py/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_generate_messages_py.dir/build.make my_package/CMakeFiles/my_package_generate_messages_py.dir/build
+.PHONY : my_package_generate_messages_py/fast
+
+# Convenience name for target.
+my_package/CMakeFiles/my_package_genlisp.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_genlisp.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_genlisp.dir/rule
+
+# Convenience name for target.
+my_package_genlisp: my_package/CMakeFiles/my_package_genlisp.dir/rule
+.PHONY : my_package_genlisp
+
+# fast build rule for target.
+my_package_genlisp/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_genlisp.dir/build.make my_package/CMakeFiles/my_package_genlisp.dir/build
+.PHONY : my_package_genlisp/fast
+
+# Convenience name for target.
+my_package/CMakeFiles/my_package_genpy.dir/rule:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/my_package_genpy.dir/rule
+.PHONY : my_package/CMakeFiles/my_package_genpy.dir/rule
+
+# Convenience name for target.
+my_package_genpy: my_package/CMakeFiles/my_package_genpy.dir/rule
+.PHONY : my_package_genpy
+
+# fast build rule for target.
+my_package_genpy/fast:
+	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f my_package/CMakeFiles/my_package_genpy.dir/build.make my_package/CMakeFiles/my_package_genpy.dir/build
+.PHONY : my_package_genpy/fast
+
+# Convenience name for target.
 my_package/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
 	cd /misc/projects/reichler/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 my_package/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : my_package/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
@@ -328,6 +429,13 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... my_package_gencpp"
+	@echo "... my_package_generate_messages"
+	@echo "... my_package_generate_messages_cpp"
+	@echo "... my_package_generate_messages_lisp"
+	@echo "... my_package_generate_messages_py"
+	@echo "... my_package_genlisp"
+	@echo "... my_package_genpy"
 	@echo "... rebuild_cache"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"

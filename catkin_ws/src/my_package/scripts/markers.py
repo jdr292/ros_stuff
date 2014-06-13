@@ -2,6 +2,7 @@
 
 import rospy
 from visualization_msgs.msg import Marker
+from std_msgs.msg import ColorRGBA
 
 def marker_maker():
     pub = rospy.Publisher("markers",Marker,queue_size=10)
@@ -16,10 +17,11 @@ def marker_maker():
       msg.type=Marker.SPHERE
       msg.id=q
       msg.action = 0
-      msg.color.r = 2550
-      msg.color.g = 255
-      msg.color.b = 255
+      msg.color.r = .75
+      msg.color.g = 0
+      msg.color.b = .5
       msg.color.a = 1
+      msg.colors = [ColorRGBA(1,1,1,1),ColorRGBA(0,0,0,0)]
       msg.pose.position.x = j
       msg.pose.position.y = j
       msg.pose.position.z = j
